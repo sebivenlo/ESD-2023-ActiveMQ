@@ -5,6 +5,8 @@ import org.apache.activemq.artemis.api.core.QueueConfiguration;
 import org.apache.activemq.artemis.api.core.RoutingType;
 import org.apache.activemq.artemis.api.core.client.*;
 
+import java.util.concurrent.TimeUnit;
+
 public class Main {
     public static void main(String[] args) throws Exception {
         ServerLocator locator = ActiveMQClient.createServerLocator("tcp://localhost:61616");
@@ -30,12 +32,13 @@ public class Main {
         ClientConsumer consumer = session.createConsumer("example");
 
         // We need to start the session before we can -receive- messages ...
+        consumer.setMessageHandler(message -> System.out.println("message = " + message.getBodyBuffer().readString()));
         session.start();
-
-        while (true) {
-            ClientMessage msgReceived = consumer.receive();
-            System.out.println("message = " + msgReceived.getBodyBuffer().readString());
-        }
+        TimeUnit.MINUTES.sleep(5);
+//        while (true) {
+//            ClientMessage msgReceived = consumer.receive();
+//            System.out.println("message = " + msgReceived.getBodyBuffer().readString());
+//        }
 
     }
 }
