@@ -1,5 +1,7 @@
 # ActiveMQ
 
+Workshop from Benjamin,Emilia,Nils,and Rachel
+
 ## Agenda
 
 - Presentaion
