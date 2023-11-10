@@ -1,4 +1,34 @@
-# ESD template
+# ActiveMQ
+
+Workshop from Benjamin,Emilia,Nils,and Rachel
+
+## Agenda
+
+- Presentaion
+- Quizz
+- Questions board
+- Demo & Excersise
+- Feedback poll
+
+***
+
+## Student area
+
+Go to to https://nearpod.com/student/ to login to the interactive presentaion. You will be given the code to join.
+
+Exercise can be found [here](task.md)
+
+## Materials
+
+- [Presentaion](activeMq.ppt)
+- [Code]()
+
+## Sources
+
+-
+
+
+
 
 ## Examples
 
