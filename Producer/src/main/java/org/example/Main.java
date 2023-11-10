@@ -10,7 +10,7 @@ import java.io.InputStreamReader;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        ServerLocator locator = ActiveMQClient.createServerLocator("tcp://145.93.36.229:61616");
+        ServerLocator locator = ActiveMQClient.createServerLocator("tcp://localhost:61616");
 
         // In this simple example, we just use one session for both producing and receiving
 

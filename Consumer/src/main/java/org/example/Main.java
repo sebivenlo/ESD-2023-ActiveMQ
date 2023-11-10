@@ -5,10 +5,12 @@ import org.apache.activemq.artemis.api.core.QueueConfiguration;
 import org.apache.activemq.artemis.api.core.RoutingType;
 import org.apache.activemq.artemis.api.core.client.*;
 
+import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 public class Main {
     public static void main(String[] args) throws Exception {
+        var queueName = args[0];
         ServerLocator locator = ActiveMQClient.createServerLocator("tcp://localhost:61616");
 
         // In this simple example, we just use one session for both producing and receiving
@@ -21,7 +23,7 @@ public class Main {
             QueueConfiguration queueConfiguration = new QueueConfiguration();
             queueConfiguration.setAddress("example");
             queueConfiguration.setRoutingType(RoutingType.MULTICAST);
-            queueConfiguration.setName("example");
+            queueConfiguration.setName(queueName);
             queueConfiguration.setDurable(true);
             session.createQueue(queueConfiguration);
 
@@ -29,16 +31,12 @@ public class Main {
         }
         // And a consumer attached to the queue ...
 
-        ClientConsumer consumer = session.createConsumer("example");
+        ClientConsumer consumer = session.createConsumer(queueName);
 
         // We need to start the session before we can -receive- messages ...
         consumer.setMessageHandler(message -> System.out.println("message = " + message.getBodyBuffer().readString()));
         session.start();
         TimeUnit.MINUTES.sleep(5);
-//        while (true) {
-//            ClientMessage msgReceived = consumer.receive();
-//            System.out.println("message = " + msgReceived.getBodyBuffer().readString());
-//        }
 
     }
 }

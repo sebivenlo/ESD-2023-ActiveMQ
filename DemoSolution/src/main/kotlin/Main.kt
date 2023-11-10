@@ -12,15 +12,7 @@ import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Send
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.SmallTopAppBar
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -63,8 +55,7 @@ fun App() {
 //        Message(uuid2.toString(), "Hello, World!"),
     )
 
-    val locator: ServerLocator =
-        ActiveMQClient.createServerLocator("tcp://localhost:61616")
+    val locator: ServerLocator = ActiveMQClient.createServerLocator("tcp://localhost:61616")
 
     // In this simple example, we just use one session for both producing and receiving
     val factory = locator.createSessionFactory()
@@ -143,18 +134,22 @@ fun App() {
                         Arrangement.Start
                     }
                     Column(horizontalAlignment = alignment) {
-                        Row(
-                            verticalAlignment = Alignment.CenterVertically,
-                            modifier = Modifier.padding(horizontal = 16.dp).padding(top = 16.dp, bottom = 4.dp)
-                        ) {
+                        Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(horizontal = 16.dp).padding(top = 16.dp, bottom = 4.dp)) {
                             Icon(Icons.Default.Person, contentDescription = null, modifier = Modifier.size(16.dp))
                             Text(text = message.sender, style = MaterialTheme.typography.bodySmall)
                         }
                         Row(
-                            horizontalArrangement = arrangement,
-                            modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp)
+                                horizontalArrangement = arrangement,
+                                modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
                         ) {
-                            Text(message.text)
+                            Surface(
+                                    shape = MaterialTheme.shapes.medium,
+                                    color = MaterialTheme.colorScheme.surfaceVariant,
+                                    contentColor = MaterialTheme.colorScheme.onSurfaceVariant,
+                                    modifier = Modifier.fillMaxWidth(0.8f)
+                            ) {
+                                Text(message.text, modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp))
+                            }
                         }
                     }
                 }

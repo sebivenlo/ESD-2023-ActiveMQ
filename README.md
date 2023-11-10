@@ -1,10 +1,43 @@
 # ESD template
 
-Please make sure all artifacts are in this GitHub repository.  
-That includes:
+## Examples
 
-- Code
-- Workshop materials
-- Presentation (if applicable)
-- References.
-- Docker (compose) file (if applicable)
+There are a few example projects in this repository.
+
+### Example
+
+[This](./Example) folder contains a pretty complete projects that shows how both message producing and consuming work.
+It is not interactive and just sends two messages that are then received and printed to the terminal.
+
+You can run it using:
+
+```bash
+cd Example
+./gradlew run
+```
+
+### Consumer
+
+[This](./Consumer) folder contains a console application that consumes all incoming messages while its running. 
+By default, this application will only run for 5 minutes, however you can change that if you want to.
+After starting this you should start the [producer project](#producer) as well to send some messages.
+
+You can run it using:
+
+```bash
+cd Consumer
+./gradlew run
+```
+
+### Producer
+
+[This](./Consumer) folder contains a console application that you can use to send ("produce") messages. 
+When it's running it will prompt you to enter a message that is then send to the configured address.
+
+You can run it using:
+
+```bash
+cd Producer
+mvn package
+java -jar ./target/Producer-1.0-SNAPSHOT.jar
+```
