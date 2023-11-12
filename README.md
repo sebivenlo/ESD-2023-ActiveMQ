@@ -4,7 +4,7 @@ Workshop from Benjamin ,Emilia ,Nils ,and Rachel
 
 ## Agenda
 
-- [Presentaion](ActiveMQ.pptx)
+- [Presentaion](./ActiveMQ.pptx)
 - Quiz
 - Questions board
 - Demo & Excersise
@@ -16,7 +16,7 @@ Workshop from Benjamin ,Emilia ,Nils ,and Rachel
 
 Go to to https://nearpod.com/student/ to login to the interactive presentaion. The code to join is **uqpv5**
 
-Exercise can be found [here](task.md)
+Exercise can be found [here](./Task.md)
 
 ## Sources
 
