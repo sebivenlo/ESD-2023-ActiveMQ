@@ -1,11 +1,11 @@
 # ActiveMQ
 
-Workshop from Benjamin,Emilia,Nils,and Rachel
+Workshop from Benjamin ,Emilia ,Nils ,and Rachel
 
 ## Agenda
 
-- Presentaion
-- Quizz
+- [Presentaion](ActiveMQ.pptx)
+- Quiz
 - Questions board
 - Demo & Excersise
 - Feedback poll
@@ -14,21 +14,17 @@ Workshop from Benjamin,Emilia,Nils,and Rachel
 
 ## Student area
 
-Go to to https://nearpod.com/student/ to login to the interactive presentaion. You will be given the code to join.
+Go to to https://nearpod.com/student/ to login to the interactive presentaion. The code to join is **uqpv5**
 
 Exercise can be found [here](task.md)
 
-## Materials
-
-- [Presentaion](activeMq.ppt)
-- [Code]()
-
 ## Sources
 
--
-
-
-
+- https://activemq.apache.org/
+- https://activemq.apache.org/components/artemis/documentation/2.0.0/
+- https://www.datadoghq.com/blog/activemq-architecture-and-metrics/
+- https://www.openlogic.com/blog/what-apache-activemq
+- https://www.ibm.com/topics/message-brokers
 
 ## Examples
 
@@ -61,7 +57,7 @@ cd Consumer
 
 ### Producer
 
-[This](./Consumer) folder contains a console application that you can use to send ("produce") messages. 
+[This](./Producer) folder contains a console application that you can use to send ("produce") messages. 
 When it's running it will prompt you to enter a message that is then send to the configured address.
 
 You can run it using:
