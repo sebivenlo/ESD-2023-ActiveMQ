@@ -1,10 +1,10 @@
 # ActiveMQ
 
-Workshop from Benjamin ,Emilia ,Nils ,and Rachel
+Workshop by Benjamin, Emilia, Nils, and Rachel
 
 ## Agenda
 
-- [Presentaion](./ActiveMQ.pptx)
+- [Presentation](./ActiveMQ.pptx)
 - Quiz
 - Questions board
 - Demo & Excersise
